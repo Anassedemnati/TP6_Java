@@ -28,22 +28,22 @@ public class AgenceBancaire {
     }
 
     public Compte getCompte(String numCompte){
-        Compte newCompte = new Compte();
+
 
         for ( Compte compte : Comptes  ) {
 
-            if (compte.getNumCompte()==numCompte){
+            if (compte.getNumCompte().equals(numCompte)){
 
-                newCompte= compte;
+               return compte;
 
-            }else {
-                newCompte= null;
             }
 
         }
-        return newCompte;
+        return null;
 
     }
+
+
     //ADD Compte
     public Boolean addCompte(Compte newCompte){
             try {
@@ -58,7 +58,7 @@ public class AgenceBancaire {
     //REMOVE Compte BY NUMCOMPTE
     public Boolean removeCompte(String numCompte){
         try{
-            return Comptes.removeIf(compte -> compte.getNumCompte() == numCompte);
+            return Comptes.removeIf(compte -> compte.getNumCompte().equals(numCompte) );
         }catch (Exception ex){
             System.out.println(ex);
             return false;
@@ -66,6 +66,7 @@ public class AgenceBancaire {
 
 
     }
+
 
     @Override
     public String toString() {
@@ -76,6 +77,13 @@ public class AgenceBancaire {
                 '}';
     }
 
+
+    public void afficher(){
+        System.out.println(this);
+        for (Compte compte : Comptes) {
+            System.out.println(compte);
+        }
+    }
     public List<Compte> getCompteByPropName(String nomPropriteaire){
         try{
             List<Compte> result = Comptes.stream()
@@ -92,6 +100,18 @@ public class AgenceBancaire {
         }
 
     }
+    private int touverCompte(String numCompte){
+        for (Compte compte:Comptes ) {
+            if (compte.getNumCompte().equals(numCompte)){
+                return Comptes.indexOf(compte);
+
+            }
+        }
+        return -1;
+    }
+
+
+
 
     public static void main(String[] args) {
         AgenceBancaire AgenceVillEljadida = new AgenceBancaire("Agence centre Ville El jadida","Av. Abderrahmane Doukkali El jadida");
@@ -103,7 +123,10 @@ public class AgenceBancaire {
 
         AgenceVillEljadida.addCompte(c1);
         AgenceVillEljadida.addCompte(c2);
-        AgenceVillEljadida.removeCompte("1");
+
+        System.out.println(AgenceVillEljadida.removeCompte("1"));
+
+        System.out.println(AgenceVillEljadida.getCompte("2"));
 
 
 
