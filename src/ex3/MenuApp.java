@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class MenuApp {
     public static void main(String[] args) {
         AgenceBancaire AgenceVilleEljadida = new AgenceBancaire("Agence centre Ville El jadida","centre Ville El jadida");
-        Compte c1= new Compte("Anasse");
-        Compte c3= new Compte("Mohamed");
-        Compte c2= new Compte("idriss");
+        Compte c1= new CompteCourant("Anasse");
+        Compte c3= new CompteEpargne("Mohamed");
+        Compte c2= new CompteCourant("idriss");
         String ln = System.getProperty("line.separator");
         String menu = "Operations autorisees :" + ln
                 + "1 Ajout compte" + ln

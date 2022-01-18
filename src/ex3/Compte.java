@@ -1,6 +1,6 @@
 package ex3;
 
-public class Compte {
+public abstract class Compte {
     public Compte() {
 
     }
@@ -11,43 +11,24 @@ public class Compte {
         this.solde=0.0;
     }
 
-    private static Integer cpt=0;
-    private String numCompte;
-    private String nomProp;
-    private Double solde;
+    protected static Integer cpt=0;
+    protected String numCompte;
+    protected String nomProp;
+    protected Double solde;
 
     public String getNumCompte() {
         return numCompte;
     }
 
-    public String getNomProp() {
-        return nomProp;
-    }
+    public abstract String getNomProp() ;
 
-    public Double getSoldeCompte() {
-        return solde;
-    }
+    public abstract Double getSoldeCompte() ;
 
-    public void setNomProp(String nomProp) {
-        this.nomProp = nomProp;
-    }
+    public abstract void setNomProp(String nomProp) ;
 
-    public Boolean deposer(Double psome) {
-        if (psome>0){
-            this.solde += psome;
-            return true;
-        }else return false;
-    }
+    public abstract Boolean deposer(Double psome);
 
-    public Boolean retire(double psomme){
-        if (this.solde>0){
-            if (solde>psomme){
-                this.solde-=psomme;
-                return true;
-            }
-        }
-        return false;
-    }
+    public abstract Boolean retire(double psomme);
 
     @Override
     public String toString() {
@@ -58,8 +39,5 @@ public class Compte {
                 '}'+'\t';
     }
 
-    public static void main(String[] args) {
-        Compte c1= new Compte("Anasse");
-        System.out.println(c1);
-    }
+
 }

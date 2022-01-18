@@ -114,24 +114,24 @@ public class AgenceBancaire {
 
 
     public static void main(String[] args) {
-        AgenceBancaire AgenceVillEljadida = new AgenceBancaire("Agence centre Ville El jadida","Av. Abderrahmane Doukkali El jadida");
-        Compte c1= new Compte("Anasse");
-        Compte c2= new Compte("Mohamed");
-        c1.deposer(1000.00);
-        c2.deposer(500.00);
+       // AgenceBancaire AgenceVillEljadida = new AgenceBancaire("Agence centre Ville El jadida","Av. Abderrahmane Doukkali El jadida");
+       // Compte c1= new Compte("Anasse");
+        //Compte c2= new Compte("Mohamed");
+       // c1.deposer(1000.00);
+        //c2.deposer(500.00);
 
 
-        AgenceVillEljadida.addCompte(c1);
-        AgenceVillEljadida.addCompte(c2);
+        //AgenceVillEljadida.addCompte(c1);
+     //   AgenceVillEljadida.addCompte(c2);
 
-        System.out.println(AgenceVillEljadida.removeCompte("1"));
+       // System.out.println(AgenceVillEljadida.removeCompte("1"));
 
-        System.out.println(AgenceVillEljadida.getCompte("2"));
-
-
+       // System.out.println(AgenceVillEljadida.getCompte("2"));
 
 
-        System.out.println(AgenceVillEljadida);
+
+
+       // System.out.println(AgenceVillEljadida);
 
     }
 }
